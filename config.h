@@ -71,18 +71,18 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
+	{ "TTT",      bstack },
 	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
- 	{ "[@]",      spiral },
+	{ "---",      horizgrid },
 	{ "|M|",      centeredmaster },
+	{ "HHH",      grid },
+ 	{ "[@]",      spiral },
 	{ ">M>",      centeredfloatingmaster },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
-	{ "TTT",      bstack },
 	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
 	{ "###",      nrowgrid },
-	{ "---",      horizgrid },
 	{ ":::",      gaplessgrid },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
@@ -182,7 +182,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
